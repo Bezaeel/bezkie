@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.core", "bezkie.core\bezkie.core.csproj", "{42C8AB32-1AB5-4F3E-91EF-D555D854F636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bezkie.core", "bezkie.core\bezkie.core.csproj", "{42C8AB32-1AB5-4F3E-91EF-D555D854F636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.infrastructure", "bezkie.infrastructure\bezkie.infrastructure.csproj", "{6CBACD65-AF6A-401B-A48F-B0E82794EA0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bezkie.infrastructure", "bezkie.infrastructure\bezkie.infrastructure.csproj", "{6CBACD65-AF6A-401B-A48F-B0E82794EA0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.application", "bezkie.application\bezkie.application.csproj", "{4C296124-66DA-4F86-A3F2-E2291185F537}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bezkie.application", "bezkie.application\bezkie.application.csproj", "{4C296124-66DA-4F86-A3F2-E2291185F537}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.tests", "bezkie.tests\bezkie.tests.csproj", "{39234BD9-DBC2-48D8-8C96-9BD901CBE703}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bezkie.tests", "bezkie.tests\bezkie.tests.csproj", "{39234BD9-DBC2-48D8-8C96-9BD901CBE703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.api", "bezkie.api\bezkie.api.csproj", "{34683C23-D6E0-47DA-AE6F-4471F6F3665E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{39234BD9-DBC2-48D8-8C96-9BD901CBE703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39234BD9-DBC2-48D8-8C96-9BD901CBE703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39234BD9-DBC2-48D8-8C96-9BD901CBE703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34683C23-D6E0-47DA-AE6F-4471F6F3665E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34683C23-D6E0-47DA-AE6F-4471F6F3665E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34683C23-D6E0-47DA-AE6F-4471F6F3665E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34683C23-D6E0-47DA-AE6F-4471F6F3665E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
