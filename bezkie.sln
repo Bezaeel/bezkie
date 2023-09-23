@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.core", "bezkie.core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.infrastructure", "bezkie.infrastructure\bezkie.infrastructure.csproj", "{6CBACD65-AF6A-401B-A48F-B0E82794EA0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.application", "bezkie.application\bezkie.application.csproj", "{4C296124-66DA-4F86-A3F2-E2291185F537}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bezkie.tests", "bezkie.tests\bezkie.tests.csproj", "{39234BD9-DBC2-48D8-8C96-9BD901CBE703}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{6CBACD65-AF6A-401B-A48F-B0E82794EA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBACD65-AF6A-401B-A48F-B0E82794EA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBACD65-AF6A-401B-A48F-B0E82794EA0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C296124-66DA-4F86-A3F2-E2291185F537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C296124-66DA-4F86-A3F2-E2291185F537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C296124-66DA-4F86-A3F2-E2291185F537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C296124-66DA-4F86-A3F2-E2291185F537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39234BD9-DBC2-48D8-8C96-9BD901CBE703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39234BD9-DBC2-48D8-8C96-9BD901CBE703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39234BD9-DBC2-48D8-8C96-9BD901CBE703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39234BD9-DBC2-48D8-8C96-9BD901CBE703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
