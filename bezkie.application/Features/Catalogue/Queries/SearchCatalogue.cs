@@ -3,6 +3,7 @@ using bezkie.core.Enums;
 using bezkie.infrastructure.Persistence;
 using FluentValidation;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Text.Json.Serialization;
 
@@ -49,7 +50,9 @@ namespace bezkie.application.Features.Catalogue.Queries
                     var message = "Success";
                     var queryResponse = new QueryResponse { Name = query.Name };
                     // check if book is available
-                    var book = _dbContext.Books.FirstOrDefault(x => x.Name == query.Name);
+                    var book = _dbContext.Books
+                                        .Include(x => x.RSVPs)
+                                        .FirstOrDefault(x => x.Name == query.Name);
                     // if no rsvp, book is available
                     if (book == null)
                     {

@@ -11,12 +11,14 @@ namespace bezkie.application.Features.RSVPs.Commands;
 
 public class CreateRSVPRequest : IRequest<BaseResponse>
 {
-    [JsonPropertyName("customer_id")]
+    [JsonIgnore]
     public long CustomerId { get; set; }
 
     [JsonPropertyName("book_id")]
     public long BookId { get; set; }
-    public RSVPStatus Status { get; set; }
+
+    [JsonIgnore]
+    public RSVPStatus Status { get; set; } = RSVPStatus.RESERVED;
 
     public RSVP ToEntity()
     {
@@ -55,7 +57,7 @@ public class CreateRSVPHandler : IRequestHandler<CreateRSVPRequest, BaseResponse
             var status = false;
             var message = "Success";
             // check if book is available
-            var rsvp = _dbContext.RSVPs.FirstOrDefault(x => x.BookId == request.BookId);
+            var rsvp = _dbContext.RSVPs.FirstOrDefault(x => x.BookId == request.BookId && x.UpdatedAt == null);
             // if no rsvp, book is available
             if (rsvp == null)
             {
@@ -71,6 +73,8 @@ public class CreateRSVPHandler : IRequestHandler<CreateRSVPRequest, BaseResponse
                     if (DateTime.UtcNow >= rsvp.StatusAt.AddHours(24))
                     {
                         status = true;
+                        rsvp.Status = RSVPStatus.EXPIRED;
+                        rsvp.UpdatedAt = DateTime.UtcNow;
                         _dbContext.RSVPs.Add(request.ToEntity());
                         await _dbContext.SaveChangesAsync();
                         message = "reserved";
