@@ -18,7 +18,7 @@ namespace bezkie.tests
             services.AddEntityFrameworkInMemoryDatabase()
                 .AddDbContext<ApplicationDbContext>(options =>
                 {
-                    options.UseInMemoryDatabase("bezloft");
+                    options.UseInMemoryDatabase("bezkie");
                     options.ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning));
                 });
             var serviceProvider = services.BuildServiceProvider();

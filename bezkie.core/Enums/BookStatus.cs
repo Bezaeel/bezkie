@@ -11,5 +11,7 @@ public enum RSVPStatus
     AVAILABLE,
     RESERVED,
     BORROWED,
+    RETURNED,
+    EXPIRED,
     OTHER
 }

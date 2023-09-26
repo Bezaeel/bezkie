@@ -8,6 +8,7 @@ public class RSVP
     public long BookId { get; set; }
     public long CustomerId { get; set; }
     public DateTime StatusAt { get; set; } = DateTime.UtcNow;
+    public DateTime? UpdatedAt { get; set; }
     public RSVPStatus Status { get; set; }
     public User Customer { get; set; }
     public Book Book { get; set; }

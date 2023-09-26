@@ -14,12 +14,7 @@ public static class DependencyInjection
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseMySQL(configuration.GetConnectionString("DefaultConnection"),
                 builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-        services.AddScoped<IApplicationDbContext>(provider =>
-        {
-            var context = provider.GetRequiredService<ApplicationDbContext>();
-            context.Database.EnsureCreated();
-            return context;
-        });
+        services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 
         services.AddIdentity<User, UserRole>()
             .AddRoles<UserRole>()

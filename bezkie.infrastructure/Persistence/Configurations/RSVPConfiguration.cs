@@ -8,8 +8,6 @@ internal class RSVPConfiguration : IEntityTypeConfiguration<RSVP>
 {
     public void Configure(EntityTypeBuilder<RSVP> builder)
     {
-        builder.HasKey(x => new { x.BookId, x.CustomerId });
-
         builder.Property(x => x.Status).HasConversion<string>();
 
         builder.HasOne(x => x.Customer)
