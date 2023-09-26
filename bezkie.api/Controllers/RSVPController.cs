@@ -1,12 +1,13 @@
-﻿using bezkie.application.Common.Models;
+﻿using bezkie.api.Extensions;
+using bezkie.application.Common.Models;
 using bezkie.application.Features.RSVPs.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualBasic;
 
 namespace bezkie.api.Controllers
 {
+    [ApiExplorerSettings(GroupName = "API")]
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Policy = "DEFAULT")]
@@ -29,6 +30,7 @@ namespace bezkie.api.Controllers
         [HttpPost]
         public async Task<IActionResult> RSVP([FromBody] CreateRSVPRequest request)
         {
+            request.CustomerId = User.Claims.GetUserId();
             var result = await _mediator.Send(request);
             if (!result.Status) return BadRequest(result);
 

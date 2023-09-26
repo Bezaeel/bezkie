@@ -17,6 +17,24 @@ namespace bezkie.api.Controllers
         }
 
         /// <summary>
+        /// This login user
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [ProducesResponseType(typeof(BaseResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseResponse), StatusCodes.Status400BadRequest)]
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        {
+            var result = await _mediator.Send(request);
+            if (!result.Status) return BadRequest(result);
+
+            return Ok(result);
+        }
+
+
+        /// <summary>
         /// This allow the user to register a new account
         /// </summary>
         /// <param name="request"></param>
@@ -24,6 +42,7 @@ namespace bezkie.api.Controllers
         [ProducesResponseType(typeof(BaseResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseResponse), StatusCodes.Status400BadRequest)]
         [HttpPost]
+        [Route("signup")]
         public async Task<IActionResult> SignUp([FromBody]CreateProfileRequest request)
         {
             var result = await _mediator.Send(request);
